@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
       title: 'Weatherco',
       theme: ThemeData(
-        // fontFamily: 'MyCustomFont',
+        fontFamily: 'Poppins',
         colorScheme: ColorScheme.fromSeed(
             seedColor: const Color(0xFF87CEEB)), // Sky blue color
         useMaterial3: true,

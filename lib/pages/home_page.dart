@@ -155,7 +155,7 @@ class HomePage extends StatelessWidget {
           Text(
             "min: ${weatherProvider.weatherDataForNextDays[0]['data'][0]['main']['temp_min'].toString()} | max: ${weatherProvider.weatherDataForNextDays[0]['data'][0]['main']['temp_max'].toString()}",
             style: const TextStyle(
-              fontSize: 15,
+              fontSize: 12,
               fontWeight: FontWeight.w400,
             ),
           ),

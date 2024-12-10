@@ -53,7 +53,6 @@ class HomePage extends StatelessWidget {
   }
 
   Widget weatherUI(BuildContext context) {
-    final weatherProvider = context.watch<WeatherProvider>();
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -185,7 +184,6 @@ class HomePage extends StatelessWidget {
   Widget _daysList(BuildContext context) {
     final weatherProvider = context.watch<WeatherProvider>();
     return Expanded(
-      // Wrap ListView.builder in Expanded
       child: ListView.separated(
         itemCount: weatherProvider.weatherDataForNextDays.length - 1,
         separatorBuilder: (context, index) => const Divider(
@@ -197,10 +195,7 @@ class HomePage extends StatelessWidget {
         itemBuilder: (context, index) {
           var weather = weatherProvider.weatherDataForNextDays[index + 1];
           var date = weather['date'];
-          var dayData =
-              weather['data'][0]; // Take the first data entry (can be adjusted)
-
-          // Extract the weather details you want to display
+          var dayData = weather['data'][0];
           var temp = dayData['main']['temp'].toString();
           var description = dayData['weather'][0]['description'];
           var windSpeed = dayData['wind']['speed'].toString();
@@ -235,7 +230,10 @@ class HomePage extends StatelessWidget {
             .getWeatherDetails();
       },
       backgroundColor: Colors.blue,
-      child: const Icon(Icons.refresh, color: Colors.white),
+      child: const Icon(
+        Icons.refresh,
+        color: Colors.white,
+      ),
     );
   }
 
